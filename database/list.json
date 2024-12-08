@@ -1,1 +1,6 @@
-
+[
+  {
+    "cmd": "test",
+    "respon": "hai bang"
+  }
+]

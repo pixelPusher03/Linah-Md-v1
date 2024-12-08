@@ -2,8 +2,8 @@ const JsConfuser = require('js-confuser');
 const fs = require("fs")
 
 let handler = async (m, { Sky, example, mime }) => {
-if (!m.quoted) return m.reply(example("dengan reply file .js"))
-if (mime !== "application/javascript") return m.reply(example("dengan reply file .js"))
+if (!m.quoted) return m.reply(example("with reply file .js"))
+if (mime !== "application/javascript") return m.reply(example("with reply file .js"))
 let media = await m.quoted.download()
 let filename = m.quoted.message.documentMessage.fileName
 await fs.writeFileSync(`./database/sampah/${filename}`, media)
@@ -36,7 +36,7 @@ await JsConfuser.obfuscate(await fs.readFileSync(`./database/sampah/${filename}`
   rgf: false
 }).then(async (obfuscated) => {
   await fs.writeFileSync(`./database/sampah/${filename}`, obfuscated)
-  await Sky.sendMessage(m.chat, {document: fs.readFileSync(`./database/sampah/${filename}`), mimetype: "application/javascript", fileName: filename, caption: "Encrypt file sukses ✅"}, {quoted: m})
+  await Sky.sendMessage(m.chat, {document: fs.readFileSync(`./database/sampah/${filename}`), mimetype: "application/javascript", fileName: filename, caption: "Encrypt file success ✅"}, {quoted: m})
 }).catch(e => m.reply("Error :" + e))
 }
 

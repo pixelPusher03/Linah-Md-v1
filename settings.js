@@ -19,27 +19,27 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 // Settings Bot 
-global.owner = '6285624297893'
+global.owner = '256709824720'
 global.versi = "0.0.3"
-global.namaOwner = "Skyzopedia"
+global.namaOwner = "TheDeveloper03"
 global.packname = 'Bot WhatsApp'
-global.botname = 'Simple Bot Skyzopedia'
-global.botname2 = 'Simple Bot'
+global.botname = 'lina md'
+global.botname2 = 'Lina Bot'
 
 global.tempatDB = 'database.json' // Jangan ubah
 global.pairing_code = true // Jangan ubah
 
 // Settings Link / Tautan
-global.linkOwner = "https://wa.me/6285624297893"
-global.linkGrup = "https://tinyurl.com/27zqt22g"
-global.linkGrup2 = "https://chat.whatsapp.com/FfbJmoSoTy12VZyXJTzXPT"
+global.linkOwner = "https://wa.me/256709824720"
+global.linkGrup = "https://whatsapp.com/channel/0029Va7qmJ4LNSa4HAXqg10u"
+global.linkGrup2 = "https://whatsapp.com/channel/0029Va7qmJ4LNSa4HAXqg10u"
 
 // Delay Jpm & Pushctc || 1000 = 1detik
 global.delayJpm = 3500
 global.delayPushkontak = 6000
 
 // Settings Channel / Saluran
-global.linkSaluran = "https://whatsapp.com/channel/0029VaYoztA47XeAhs447Y1s"
+global.linkSaluran = "https://whatsapp.com/channel/0029Va7qmJ4LNSa4HAXqg10u"
 global.idSaluran = "120363257033988496@newsletter"
 global.namaSaluran = "Skyzopedia [ Testimoni ]"
 

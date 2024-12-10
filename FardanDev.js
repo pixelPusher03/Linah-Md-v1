@@ -1,20 +1,3 @@
-/* 
-
-=========================================================================
-
-  #- Credits By Skyzopedia
-   Contact: https://6285624297893
-   Youtube: https://youtube.com/@skyzodev
-   Telegram: https://t.me/skyzodev
-    
-  Developer : https://wa.me/6285624297893
-  
-  -[ ! ]- Jangan hapus contact developer! hargai pembuat script ini
-
-=========================================================================
-
-*/
-
 process.on('uncaughtException', console.error)
 process.on('unhandledRejection', console.error)
 
@@ -51,7 +34,7 @@ const { unixTimestampSeconds, generateMessageTag, processTime, webApi, getRandom
 
 
 module.exports = FardanDev = async (FardanDev, m, chatUpdate, store) => {
-	try {
+        try {
 await LoadDataBase(FardanDev, m)
 const botNumber = await FardanDev.decodeJid(FardanDev.user.id)
 const body = (m.type === 'conversation') ? m.message.conversation : (m.type == 'imageMessage') ? m.message.imageMessage.caption : (m.type == 'videoMessage') ? m.message.videoMessage.caption : (m.type == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.type == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.type == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.type == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.type === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
@@ -88,7 +71,7 @@ const qlocJpm = {key: {participant: '0@s.whatsapp.net', ...(m.chat ? {remoteJid:
 
 const qlocPush = {key: {participant: '0@s.whatsapp.net', ...(m.chat ? {remoteJid: `status@broadcast`} : {})}, message: {locationMessage: {name: `WhatsApp Bot ${namaOwner}`,jpegThumbnail: ""}}}
 
-const qpayment = {key: {remoteJid: '0@s.whatsapp.net', fromMe: false, id: `ownername`, participant: '0@s.whatsapp.net'}, message: {requestPaymentMessage: {currencyCodeIso4217: "USD", amount1000: 999999999, requestFrom: '0@s.whatsapp.net', noteMessage: { extendedTextMessage: { text: "Simple Botz"}}, expiryTimestamp: 999999999, amount: {value: 91929291929, offset: 1000, currencyCode: "USD"}}}}
+const qpayment = {key: {remoteJid: '0@s.whatsapp.net', fromMe: false, id: `ownername`, participant: '0@s.whatsapp.net'}, message: {requestPaymentMessage: {currencyCodeIso4217: "USD", amount1000: 999999999, requestFrom: '0@s.whatsapp.net', noteMessage: { extendedTextMessage: { text: "Lina MD"}}, expiryTimestamp: 999999999, amount: {value: 91929291929, offset: 1000, currencyCode: "USD"}}}}
 
 const qtoko = {key: {fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? {remoteJid: "status@broadcast"} : {})}, message: {"productMessage": {"product": {"productImage": {"mimetype": "image/jpeg", "jpegThumbnail": ""}, "title": `${namaOwner} - Marketplace`, "description": null, "currencyCode": "IDR", "priceAmount1000": "999999999999999", "retailerId": `Powered By ${namaOwner}`, "productImageCount": 1}, "businessOwnerJid": `0@s.whatsapp.net`}}}
 
@@ -117,9 +100,9 @@ var isgclink = isLinkThisGc.test(m.text)
 if (isgclink) return
 let delet = m.key.participant
 let bang = m.key.id
-await FardanDev.sendMessage(m.chat, {text: `*#- [ Link Grup Terdeteksi ]*
+await FardanDev.sendMessage(m.chat, {text: `*#- [ Group Link Detected ]*
 
-@${m.sender.split("@")[0]} Maaf kamu akan saya kick, karna admin/ownerbot telah menyalakan fitur antilink grup lain!`, mentions: [m.sender]}, {quoted: m})
+@${m.sender.split("@")[0]} Sorry, I'm going to kick you, because the admin/ownerbot has turned on the antilink feature of another group!`, mentions: [m.sender]}, {quoted: m})
 await FardanDev.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
 await sleep(1000)
 await FardanDev.groupParticipantsUpdate(m.chat, [m.sender], "remove")
@@ -135,9 +118,9 @@ var isgclink = isLinkThisGc.test(m.text)
 if (isgclink) return
 let delet = m.key.participant
 let bang = m.key.id
-await FardanDev.sendMessage(m.chat, {text: `*#- [ Link Grup Terdeteksi ]*
+await FardanDev.sendMessage(m.chat, {text: `*#- [ Group Link Detected ]*
 
-@${m.sender.split("@")[0]} Maaf pesan kamu saya hapus, karna admin/ownerbot telah menyalakan fitur antilink grup lain!`, mentions: [m.sender]}, {quoted: m})
+@${m.sender.split("@")[0]} Sorry, I deleted your message, because the bot admin/owner has turned on the antilink feature of another group!`, mentions: [m.sender]}, {quoted: m})
 await FardanDev.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
 /*await sleep(1000)
 await FardanDev.groupParticipantsUpdate(m.chat, [m.sender], "remove")*/
@@ -147,30 +130,26 @@ await FardanDev.groupParticipantsUpdate(m.chat, [m.sender], "remove")*/
 if (m.isGroup && db.settings.autopromosi == true) {
 if (m.text.includes("https://") && !m.fromMe) {
 await FardanDev.sendMessage(m.chat, {text: `
-*Skyzopedia Menyediakan 🌟*
-* Panel Pterodactyl Server Private
-* Script Bot WhatsApp
-* Domain (Request Nama Domain & Free Akses Cloudflare)
-* Nokos WhatsApp All Region (Tergantung Stok!)
-* Jasa Fix/Edit/Rename & Tambah Fitur Script Bot WhatsApp
-* Jasa Suntik Followers/Like/Views All Sosmed
-* Jasa Install Panel Pterodactyl
-* Dan Lain Lain Langsung Tanyakan Saja.
-
-*🏠 Join Grup Bebas Promosi*
-* *Grup Bebas Promosi 1 :*
+*The Developer03 Provides 🌟*
+* Private Pterodactyl Server Panel
+* WhatsApp Bot Scripts
+* Domain (Request Domain Name & Free Cloudflare Access)
+* Nokos WhatsApp All Region (Depending on Stock!)
+* Fix/Edi services
+*🏠 Join Promotion Free Group*
+* *Free Promotion Group 1 :*
 https://chat.whatsapp.com/IP1KjO4OyM97ay2iEsSAFy
 * *Grup Bebas Promosi 2 :*
-https://chat.whatsapp.com/CWO0TqYeCVbIoY4YzsTxb7
-* *Channel Testimoni :*
-https://whatsapp.com/channel/0029VaYoztA47XeAhs447Y1s
+https://whatsapp.com/channel/0029Va7qmJ4LNSa4HAXqg10u
+* *Channel Testimonial :*
+https://whatsapp.com/channel/0029Va7qmJ4LNSa4HAXqg10u
 
-*👤 Contact Skyzopedia*
-* *WhatsApp Utama :*
-+6285624297893
-* *WhtasApp Cadangan :*
-+628386890336
-https://t.me/skyzodev
+*👤 Contact The Developer03*
+* *WhatsApp Main :*
++256709824720
+* *WhtasApp Proposal :*
++256743205670
+https://t.me/sacatechincXbot
 `}, {quoted: null})
 }
 }
@@ -186,7 +165,7 @@ await m.reply(check.respon)
 //============= [ FUNCTION ] ======================================================
 
 const example = (teks) => {
-return `\n *Contoh Penggunaan :*\n Ketik *${prefix+command}* ${teks}\n`
+return `\n *Usage Examples :*\n Type *${prefix+command}* ${teks}\n`
 }
 
 function generateRandomNumber(min, max) {
@@ -216,7 +195,7 @@ deviceListMetadata: {},
 deviceListMetadataVersion: 2
 }, interactiveMessage: proto.Message.InteractiveMessage.fromObject({
 body: proto.Message.InteractiveMessage.Body.fromObject({
-text: "*All Transaksi Open ✅*\n\n*Skyzopedia* Menyediakan Produk & Jasa Dibawah Ini ⬇️"
+text: "*All Transactions Open ✅*\n\n*TheDeveloper03* Provides Products and Services Below I⬇️"
 }), 
 contextInfo: {
 mentionedJid: mention
@@ -224,24 +203,21 @@ mentionedJid: mention
 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
 cards: [{
 header: proto.Message.InteractiveMessage.Header.fromObject({
-title: `*Skyzopedia Menyediakan 🌟*
+title: `*The Developer03 Provides 🌟*
 
-* Panel Pterodactyl Server Private
-* Script Bot WhatsApp
-* Domain (Request Nama Domain & Free Akses Cloudflare)
-* Nokos WhatsApp All Region (Tergantung Stok!)
-* Jasa Fix/Edit/Rename & Tambah Fitur Script Bot WhatsApp
-* Jasa Suntik Followers/Like/Views All Sosmed
-* Jasa Install Panel Pterodactyl
-* Dan Lain Lain Langsung Tanyakan Saja.
+* Private Pterodactyl Server Panel
+* WhatsApp Bot Scripts
+* Domain (Request Domain Name & Free Cloudflare Access)
+* Nokos WhatsApp All Region (Depending on Stock!)
+* Fix/E Services
 
 *🏠 Join Grup Bebas Promosi*
 * *Grup  Bebas Promosi 1 :*
 https://chat.whatsapp.com/IP1KjO4OyM97ay2iEsSAFy
 * *Grup Bebas Promosi 2 :*
-https://chat.whatsapp.com/CWO0TqYeCVbIoY4YzsTxb7
+https://whatsapp.com/channel/0029Va7qmJ4LNSa4HAXqg10u
 * *Channel Testimoni :*
-https://whatsapp.com/channel/0029VaYoztA47XeAhs447Y1s`, 
+https://whatsapp.com/channel/0029Va7qmJ4LNSa4HAXqg10u`, 
 hasMediaAttachment: true,
 ...imgsc
 }), 
@@ -276,12 +252,12 @@ title: `*List Panel Run Bot Private 🌟*
 
 * Ram Unlimited : Rp10.000
 
-*Syarat & Ketentuan :*
-* _Server private & kualitas terbaik!_
-* _Script bot dijamin aman (anti drama/maling)_
-* _Garansi 10 hari (1x replace)_
-* _Server anti delay/lemot!_
-* _Claim garansi wajib bawa bukti transaksi_`, 
+*Terms & Conditions:*
+* _Private servers & best quality!_
+* _Bot script guaranteed safe (anti-drama/theft)_
+* _10 day guarantee (1x replace)_
+* _Anti delay/slow server!_
+* _Guarantee claims must be brought `, 
 hasMediaAttachment: true,
 ...imgsc
 }),
@@ -310,14 +286,12 @@ title: `*List Jasa Suntik Sosmed 🌟*
 *- Layanan Telegram :*
 * 500 Member CH : Rp8000
 
-*- Layanan Whats'App :*
-* 100 Member CH : Rp12.000
+*- WhatsApp Services :*
+* 100 CH Members: Rp. 12,000
 
-*Syarat & Ketentuan :*
-* _Proses tidak memerlukan email/password akun, hanya memakai username/link tautan_
-* _Selama proses akun jangan di private/dibatasi_
-* _Masing masing layanan mempunyai garansi & non garansi_
-* _Proses maksimal 1 x 24jam, Order wajib sabar!_`, 
+*Terms & Conditions:*
+* _The process does not require email/account password, just use username/link_
+* _During the account process, do not make it private/!_`, 
 hasMediaAttachment: true,
 ...imgsc
 }),
@@ -435,7 +409,7 @@ break
 
 case "ytmp3": {
 if (!text) return m.reply(example("linknya"))
-if (!text.startsWith("https://")) return m.reply("Link Tautan Tidak Valid")
+if (!text.startsWith("https://")) return m.reply("Link Invalid Link")
 await FardanDev.sendMessage(m.chat, {react: {text: '🕖', key: m.key}})
 
 var anu = await fetchJson(`https://aemt.uk.to/download/ytdl?url=${text}`)
@@ -1139,7 +1113,7 @@ const connSettings = {
  username: 'root',
  password: passwd
 }
-    
+
 const command = `bash <(curl -s https://raw.githubusercontent.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/main/install.sh)`
 const ress = new Client();
 
@@ -1192,7 +1166,7 @@ const connSettings = {
  username: 'root',
  password: passwd
 }
-    
+
 const command = `bash <(curl -s https://raw.githubusercontent.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/main/install.sh)`
 const ress = new Client();
 
@@ -1243,7 +1217,7 @@ const connSettings = {
  username: 'root',
  password: passwd
 }
-    
+
 const command = `bash <(curl -s https://raw.githubusercontent.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/main/install.sh)`
 const ress = new Client();
 
@@ -1296,7 +1270,7 @@ const connSettings = {
  username: 'root',
  password: passwd
 }
-    
+
 const command = `bash <(curl -s https://raw.githubusercontent.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/main/install.sh)`
 const ress = new Client();
 
@@ -1605,7 +1579,7 @@ const connSettings = {
  username: 'root',
  password: passwd
 }
-    
+
 const command = `${token} && systemctl start wings`
 const ress = new Client();
 
@@ -1649,7 +1623,7 @@ const connSettings = {
  username: 'root',
  password: passwd
 }
-    
+
 const command = `bash <(curl -s https://raw.githubusercontent.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/main/install.sh)`
 const ress = new Client();
 
@@ -3471,7 +3445,7 @@ break
 //================================================================================
 
 case "listowner": case "listown": {
-if (owners.length < 1) return m.reply("Tidak ada owner tambahan")
+if (owners.length < 1) return m.reply("There are no additional owners")
 let teks = `\n *#- List all owner tambahan*\n`
 for (let i of owners) {
 teks += `\n* ${i.split("@")[0]}
@@ -3504,10 +3478,10 @@ if (!isCreator) return Reply(mess.owner)
 if (!m.quoted && !text) return m.reply(example("6285###"))
 const input = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"
 const input2 = input.split("@")[0]
-if (input2 === global.owner || owners.includes(input) || input === botNumber) return m.reply(`Nomor ${input2} sudah menjadi owner bot!`)
+if (input2 === global.owner || owners.includes(input) || input === botNumber) return m.reply(`Nomor ${input2} already become owner bot!`)
 owners.push(input)
 await fs.writeFileSync("./database/owner.json", JSON.stringify(owners, null, 2))
-m.reply(`Berhasil menambah owner ✅`)
+m.reply(`Added successfully owner ✅`)
 }
 break
 
@@ -3566,8 +3540,8 @@ FardanDev.sendMessage(Obj + "@s.whatsapp.net", {text: `
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
-	fs.unwatchFile(file)
-	console.log(chalk.redBright(`Update ${__filename}`))
-	delete require.cache[file]
-	require(file)
+        fs.unwatchFile(file)
+        console.log(chalk.redBright(`Update ${__filename}`))
+        delete require.cache[file]
+        require(file)
 });
